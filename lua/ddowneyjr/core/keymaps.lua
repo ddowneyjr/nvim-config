@@ -24,9 +24,28 @@ keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) --
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
+keymap.set("n", "<leader>s=", "<C-w>+", { desc = "Increase split height" }) -- increase split height
+keymap.set("n", "<leader>s-", "<C-w>-", { desc = "Decrease split height" }) -- decrease split height
+keymap.set("n", "<leader>s.", "<C-w>>", { desc = "Increase split height" }) -- increase split height
+keymap.set("n", "<leader>s,", "<C-w><", { desc = "Decrease split height" }) -- decrease split height
 
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- Open terminal in a horizontal split and automatically enter terminal mode
+keymap.set("n", "<leader>`", function()
+	vim.cmd("split")
+	vim.cmd("terminal")
+	vim.cmd("startinsert")
+end, { desc = "Open terminal in split and enter terminal mode" })
+
+-- Exit terminal mode and return to the previous buffer
+keymap.set(
+	"t",
+	"<leader>`",
+	"<C-\\><C-n>:bd!<CR>",
+	{ silent = true, desc = "Exit terminal and return to previous buffer" }
+)
