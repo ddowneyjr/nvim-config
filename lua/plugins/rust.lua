@@ -13,8 +13,9 @@ return {
           end,
           default_settings = {
             ['rust-analyzer'] = {
-              checkOnSave = {
-                command = "clippy", -- Enable clippy for better error finding
+              checkOnSave = true,
+              check = {
+                command = "clippy",
               },
             },
           },
