@@ -25,10 +25,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.opt.clipboard = 'unnamedplus' -- allows system clipboard for copy paste
 
-vim.keymap.set('n', '<C-a>', '<C-w>h', { desc = 'Window left' })
-vim.keymap.set('n', '<C-s>', '<C-w>j', { desc = 'Window down' })
-vim.keymap.set('n', '<C-w>', '<C-w>k', { desc = 'Window up' })
-vim.keymap.set('n', '<C-d>', '<C-w>l', { desc = 'Window right' })
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Window down' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
 
 -- Set jk to map to <Esc> in Insert mode
 vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true, desc = 'Exit Insert Mode with jk'})

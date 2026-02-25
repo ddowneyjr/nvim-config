@@ -45,9 +45,10 @@ return {
 			})
 			vim.lsp.enable("lua_ls")
 
-			-- 2. Apex Setup (SDKMAN Fix)
-			-- ADDED THE MISSING SLASH HERE:
-			local java_path = vim.fn.expand("$HOME") .. "/.sdkman/candidates/java/17.0.10-tem/bin/java"
+			-- 2. Apex Setup (dynamic Java path)
+			local java_home = os.getenv("JAVA_HOME")
+				or vim.fn.expand("$HOME") .. "/.sdkman/candidates/java/current"
+			local java_path = java_home .. "/bin/java"
 
 			vim.lsp.config("apex_ls", {
 				cmd = {
