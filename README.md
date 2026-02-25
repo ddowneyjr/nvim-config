@@ -74,6 +74,25 @@ Installed via Mason:
 | `<C-j>` | Normal | Window down |
 | `<C-k>` | Normal | Window up |
 | `<C-l>` | Normal | Window right |
+| `<leader>wq` | Normal | Close window |
+| `<leader>wv` | Normal | Split vertical |
+| `<leader>wh` | Normal | Split horizontal |
+
+### Buffers (bufferline.nvim)
+
+| Key | Action |
+|-----|--------|
+| `<leader>be` | Open file (prompts for path) |
+| `<leader>bn` | New empty buffer |
+| `<leader>bl` | List buffers (Telescope) |
+| `<leader>b[` | Previous buffer |
+| `<leader>b]` | Next buffer |
+| `<S-h>` | Previous buffer |
+| `<S-l>` | Next buffer |
+| `<leader>bp` | Pick buffer |
+| `<leader>bo` | Close other buffers |
+| `<leader>bd` | Delete buffer |
+| `<leader>bD` | Force delete buffer |
 
 ### LSP
 
@@ -148,6 +167,18 @@ Installed via Mason:
 | `<leader>sm` | List metadata to pull |
 | `<leader>ta` | Run current test |
 | `<leader>tA` | Run all tests in file |
+
+### Rust (rustaceanvim)
+
+| Key | Action |
+|-----|--------|
+| `<leader>rr` | List runnables |
+| `<leader>rd` | List debuggables |
+| `<leader>rt` | List testables |
+| `<leader>rm` | Expand macro |
+| `<leader>re` | Explain error |
+| `<leader>rc` | Open Cargo.toml |
+| `<leader>rp` | Go to parent module |
 
 ### Claude AI
 

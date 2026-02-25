@@ -29,9 +29,19 @@ vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Window left' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Window down' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Window up' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Window right' })
+vim.keymap.set('n', '<leader>wq', '<C-w>q', { desc = 'Window close' })
+vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = 'Window split vertical' })
+vim.keymap.set('n', '<leader>wh', '<C-w>s', { desc = 'Window split horizontal' })
 
 -- Set jk to map to <Esc> in Insert mode
 vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true, desc = 'Exit Insert Mode with jk'})
+
+-- Buffer keybinds
+vim.keymap.set('n', '<leader>be', ':e ', { desc = 'Buffer: Open file' })
+vim.keymap.set('n', '<leader>bn', ':enew<CR>', { desc = 'Buffer: New empty' })
+vim.keymap.set('n', '<leader>bl', ':Telescope buffers<CR>', { desc = 'Buffer: List' })
+vim.keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Buffer: Delete' })
+vim.keymap.set('n', '<leader>bD', ':bd!<CR>', { desc = 'Buffer: Force delete' })
 
 -- Turns on line numbers
 vim.opt.number = true
