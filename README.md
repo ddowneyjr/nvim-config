@@ -1,3 +1,5 @@
+generated with claude code
+
 # Neovim Configuration
 
 A modern Neovim setup using lazy.nvim with LSP, autocompletion, and Salesforce development support.
