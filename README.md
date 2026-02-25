@@ -145,9 +145,9 @@ Installed via Mason:
 | `<leader>sl` | Refresh/list orgs |
 | `<leader>sd` | Deploy current file |
 | `<leader>sr` | Retrieve current file |
-| `<leader>st` | Pull metadata types |
 | `<leader>sm` | List metadata to pull |
-| `<leader>ta` | Run all tests in file |
+| `<leader>ta` | Run current test |
+| `<leader>tA` | Run all tests in file |
 
 ### Claude AI
 

@@ -5,11 +5,12 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"ibhagwan/fzf-lua",
 		},
+		ft = { "apex", "sosl", "soql", "javascript", "html", "css", "xml" },
 		config = function()
 			local sf = require("sf")
 
 			sf.setup({
-				fetch_org_list_at_nvim_start = true,
+				fetch_org_list_at_nvim_start = false,
 				terminal = "integrated",
 				term_config = {
 					dimensions = {
@@ -19,25 +20,22 @@ return {
 				},
 			})
 
-			-- KEYBINDINGS
 			local map = vim.keymap.set
 
 			-- Org Management
-			map("n", "<leader>so", sf.set_target_org, { desc = "SF: Set Target Org" })
-			map("n", "<leader>sl", sf.fetch_org_list, { desc = "SF: Refresh/List Orgs" }) -- Changed from org_list
+			map("n", "<leader>so", function() sf.set_target_org() end, { desc = "SF: Set Target Org" })
+			map("n", "<leader>sl", function() sf.fetch_org_list() end, { desc = "SF: Refresh/List Orgs" })
 
 			-- Deploy / Retrieve
-			-- Note: In some versions, these are sf.save_and_push and sf.retrieve
-			map("n", "<leader>sd", sf.save_and_push, { desc = "SF: Deploy Current File" })
-			map("n", "<leader>sr", sf.retrieve, { desc = "SF: Retrieve Current File" })
+			map("n", "<leader>sd", function() sf.save_and_push() end, { desc = "SF: Deploy Current File" })
+			map("n", "<leader>sr", function() sf.retrieve() end, { desc = "SF: Retrieve Current File" })
 
 			-- Metadata Browsing
-			map("n", "<leader>st", "<cmd>SF mdtype pull<CR>", { desc = "SF: Pull Metadata Types" })
-			map("n", "<leader>sm", sf.list_md_to_retrieve, { desc = "SF: List Metadata to Pull" })
+			map("n", "<leader>sm", function() sf.list_md_to_retrieve() end, { desc = "SF: List Metadata to Pull" })
 
 			-- Testing
-			-- The specific function for "all tests in file" is often named as follows:
-			map("n", "<leader>ta", sf.run_all_tests_in_this_file, { desc = "SF: Run All Tests in File" })
+			map("n", "<leader>ta", function() sf.run_current_test() end, { desc = "SF: Run Current Test" })
+			map("n", "<leader>tA", function() sf.run_all_tests_in_this_file() end, { desc = "SF: Run All Tests in File" })
 		end,
 	},
 }
